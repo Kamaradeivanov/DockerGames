@@ -1,4 +1,5 @@
-FROM ubuntu:16.04     #Use the last LTS version of ubuntu
+#Use the last LTS version of ubuntu
+FROM ubuntu:16.04
 
 MAINTAINER kamaradeivanov
 
