@@ -1,11 +1,11 @@
-#Starbound - DockerGames project
+# Starbound - DockerGames project
 
 Docker version of the Starbound steam server.
 
-##Build history
+## Build history
 v1.0: First version with steam server Starbound v1.1.1 embedded
 
-##How to use this image
+## How to use this image
 Minimal run
 `docker run --name starbound kamaradeivanov/starbound`
 

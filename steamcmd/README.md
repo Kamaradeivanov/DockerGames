@@ -1,11 +1,11 @@
-#SteamCMD - DockerGames project
+# SteamCMD - DockerGames project
 
 Docker version of the SteamCMD server.
 
-##Build history
+## Build history
 v1.0: First version with the latest steamcmd version
 
-##How to use this image
+## How to use this image
 This image must not be run directly.
 It's a partial image and must be used by a Dockerfile
 `FROM kamaradeivanov/steamcmd`

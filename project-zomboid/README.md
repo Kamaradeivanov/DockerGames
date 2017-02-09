@@ -1,11 +1,11 @@
-#Project Zomboid - DockerGames project
+# Project Zomboid - DockerGames project
 
 Docker version of the project-zomboid steam server.
 
-##Build history
+## Build history
 v1.0: First version with steam server project-zomboid v0.42 embedded
 
-##How to use this image
+## How to use this image
 Minimal run
 `docker run --name project-zomboid kamaradeivanov/project-zomboid`
 
