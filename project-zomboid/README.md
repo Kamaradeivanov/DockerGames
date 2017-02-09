@@ -10,18 +10,18 @@ Minimal run
 `docker run --name project-zomboid kamaradeivanov/project-zomboid`
 
 Full run
-`docker run -d -e SERVERNAME="pzServer" -e ADMINPASSWORD="pzPassword" -v /My/path/to/My/Config/and/data:/server-data -p 8766:8766/udp -p 16261:16261/udp -p 16262-16272:16262-16272 --name project-zomboid kamaradeivanov/project-zomboid`
+`docker run -d -e SERVER_NAME="pzServer" -e ADMIN_PASSWORD="pzPassword" -v /My/path/to/My/Config/and/data:/server-data -p 8766:8766/udp -p 16261:16261/udp -p 16262-16272:16262-16272 --name project-zomboid kamaradeivanov/project-zomboid`
 
 - You can map the directory containing server files with -v /my/path:/server-files.  
 - You need to bind X ports for client connection. (Example : If you have 10 slots, you need to put -p 16262-16272:16262-16272, if you have 100 slots, you need to put -p 16262-16362:16262-16362).
 - Port 16261 need to be bind in tcp AND udp.
-- Once you have run the docker for the first time, you can edit your config file in your map directory /server-data. (In Server/$SERVERNAME.ini)
-- SERVERNAME is not the display name of your server, you need to edit /server-data/Server/$SERVERNAME.ini.
+- Once you have run the docker for the first time, you can edit your config file in your map directory /server-data. (In Server/$SERVER_NAME.ini)
+- SERVER_NAME is not the display name of your server, you need to edit /server-data/Server/$SERVER_NAME.ini.
 
 ## Variables
-+ __SERVERNAME__
++ __SERVER_NAME__
 Name of your server (for db & ini file)
-+ __ADMINPASSWORD__
++ __ADMIN_PASSWORD__
 Admin password on your server
 
 ## Volumes
