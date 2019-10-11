@@ -8,8 +8,25 @@ build-starbound:
   before_script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
   script:
+    - DOCKER_IMAGE=registry.gitlab.com/kamaradeivanov/dockergames/starbound:latest
     - cd starbound
-    - docker build --pull -t "$CI_REGISTRY_IMAGE" .
-    - docker push "$CI_REGISTRY_IMAGE"
+    - docker build --pull -t "$DOCKER_IMAGE" .
+    - docker push "$DOCKER_IMAGE"
+  only:
+    - master
+
+build-projectz:
+  # Official docker image.
+  image: docker:latest
+  stage: build
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    - DOCKER_IMAGE=registry.gitlab.com/kamaradeivanov/dockergames/project-zomboid:latest
+    - cd project-zomboid
+    - docker build --pull -t "$DOCKER_IMAGE" .
+    - docker push "$DOCKER_IMAGE"
   only:
     - master
